@@ -71,8 +71,23 @@ function onGameOver($winner) {
   }).addClass('winner-style');
 
   setTimeout(function() {
-    alert('Winner!');
+    alert($winner[0].id + " wins!");
+    reset();
   }, 400); //as in 400 miliseconds
 
-  console.log($winner);
+}
+
+function reset() {
+    gameOver = false;
+    hillaryPOS = 0;
+    trumpPOS = 0;
+
+    $hillary.css({
+        top: '160px',
+        left: '10px'
+    }).removeClass('winner-style');
+    $trump.css({
+        top: '250px',
+        left: '10px'
+    }).removeClass('winner-style');
 }
